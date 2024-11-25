@@ -1,0 +1,346 @@
+libraries:
+  One:
+    collection_files:
+    - file: config/One.yml
+    - default: basic
+    - default: imdb
+      template_variables:
+        use_lowest: true
+        use_popular: true
+        use_top: false
+        item_radarr_tag: default_imdb
+#    - default: oscars
+#      template_variables:
+#        use_year_collections: false
+#        item_radarr_tag: default_oscars
+    - default: universe
+      template_variables:
+#        exclude: [avp, arrow, dca, fast, mummy, trek, askew, wizard]
+        include: [marvel, mcu, middle, rocky, star, xmen]
+        use_separator: false
+#        append_data:
+#          monster: MonsterVerse
+#        trakt_list_monster: https://trakt.tv/users/rzepkowski/lists/monsterverse-movies
+#        collection_order: release
+    - default: letterboxd
+      template_variables:
+        use_top_250: true
+        use_1001_movies: true
+        use_edgarwright: true
+        use_rogerebert: true
+        use_women_directors: true
+        use_black_directors: true
+        use_documentaries: true
+        use_animation: true
+        use_horror: true
+        use_imdb_top_250: true
+        use_oscars: true
+        use_cannes: true
+        cache_builders: 14
+        cache_builders_1001_movies: 30
+        cache_builders_edgarwright: 30
+    - default: franchise 
+      template_variables:
+        use_separator: false
+#        exclude: [1240438,166698,126221,1960,1375690,573693, 748, 212279, 104830, 122017, 530064, 944437, 113592, 466894, 189159, 477208, 877586, 702342, 1175577, 205459, 747566, 86027, 167613, 124950, 823573, 421904, 379475, 404770, 356688, 209131, 334996, 248534, 785583, 103372, 939227, 529892, 1197140, 201930, 112636, 87186, 257571, 359005, 164397, 165369, 747566, 553717, 464577, 9436, 52789, 98853, 86116, 86058, 748919, 925006, 923500, 956687, 1059494, 133830, 435259, 98430, 137697, 155474, 1083017, 135468, 506363, 86115, 1069584, 990446, 693729, 143755, 267922, 87255, 539554, 747874, 19163, 386162, 185682, 783869, 43072, 99606, 1040152, 137696, 35792, 173628, 286948, 488924, 913931, 893731, 179244, 595693, 136214, 94602, 547477, 373538, 167985, 224976, 47391, 168545, 722961, 806483, 473843, 330605, 487765, 10456, 531242, 290933, 1162328, 689974, 1156855, 570184, 10194, 424202, 489724, 1184152, 1078456, 627517, 468552, 1029834, 158391, 131780, 385528, 668003, 16302, 661031, 34055, 192541, 300431, 471435, 1068899, 627389, 205672, 608103, 1236484, 1052355, 89137, 1178688, 1232898, 204930, 531315, 732397, 114783, 718551, 177467, 86066, 86110, 897238, 493668, 185103, 325470, 527439, 295130, 427084, 899158, 544670, 134897, 720879, 86486, 917277, 129748, 239595, 477962, 1280074, 1281633, 288280, 1308051, 422834, 86311,131295,623911,618529,9744,284433,1022790,131292,635362,96679,1190121,556,531241,131296,453993,950289,125574,809185,133352,751156,114431,8091,87096,726865,735,643572,866637]
+        include: [105995,115762,120794,182813,10893,263,448150,1570,726871,12263,2980,230,1241,8917,84,70068,17178,2366,328,97768,102128,8945,2344,8581,47770,295,269098,399,119674,123256,107949,521226,98036,74508,2602,573436,10522,8537,528,182923,111751,619537,91799,207621,529,135489,506918]
+        movie_619537: 389868
+#    - default: studio
+#      template_variables:
+#        use_separator: false
+#        include:
+#          - A24
+#          - Film4 Productions
+    overlay_files:
+    - default: resolution
+      template_variables:
+        use_1080p: false
+        use_720p: false
+        use_576p: false
+        use_480p: false
+    - remove_overlays: false
+    operations:
+      assets_for_all: true
+      metadata_backup:
+        path: /config/backup/One_Metadata_Backup.yml
+        add_blank_entries: true
+        sync_tags: true
+      mass_genre_update:
+        - tmdb
+        - tvdb
+        - imdb
+        - omdb
+        - lock
+      mass_studio_update:
+        - tmdb
+        - lock
+      mass_originally_available_update: 
+        - tmdb
+        - tvdb
+#        - mdb_digital
+        - lock
+  Badger Movies:
+    overlay_files:
+    - default: resolution
+      template_variables:
+        use_1080p: false
+        use_720p: false
+        use_576p: false
+        use_480p: false
+    - remove_overlays: false
+    operations:
+      assets_for_all: true
+      metadata_backup:
+        path: /config/backup/Badger_Metadata_Backup.yml
+        add_blank_entries: true
+        sync_tags: true
+      mass_genre_update:
+        - tmdb
+        - tvdb
+        - imdb
+        - omdb
+        - lock
+      mass_studio_update:
+        - tmdb
+        - lock
+      mass_originally_available_update: 
+        - tmdb
+        - tvdb
+#        - mdb_digital
+        - lock
+  Chris Movies:
+    overlay_files:
+    - default: resolution
+      template_variables:
+        use_1080p: false
+        use_720p: false
+        use_576p: false
+        use_480p: false
+    - remove_overlays: false
+    operations:
+      assets_for_all: true
+      metadata_backup:
+        path: /config/backup/Chris_Metadata_Backup.yml
+        add_blank_entries: true
+        sync_tags: true
+      mass_genre_update:
+        - tmdb
+        - tvdb
+        - imdb
+        - omdb
+        - lock
+      mass_studio_update:
+        - tmdb
+        - lock
+      mass_originally_available_update: 
+        - tmdb
+        - tvdb
+#        - mdb_digital
+        - lock
+  Documentaries:
+    overlay_files:
+    - default: resolution
+      template_variables:
+        use_1080p: false
+        use_720p: false
+        use_576p: false
+        use_480p: false
+    - remove_overlays: false
+    operations:
+      assets_for_all: true
+      metadata_backup:
+        path: /config/backup/Documentary_Metadata_Backup.yml
+        add_blank_entries: true
+        sync_tags: true
+      mass_genre_update:
+        - tmdb
+        - tvdb
+        - imdb
+        - omdb
+        - lock
+      mass_studio_update:
+        - tmdb
+        - lock
+      mass_originally_available_update: 
+        - tmdb
+        - tvdb
+#        - mdb_digital
+        - lock
+  Monkey Movies:
+    overlay_files:
+    - default: resolution
+      template_variables:
+        use_1080p: false
+        use_720p: false
+        use_576p: false
+        use_480p: false
+    - remove_overlays: false
+    operations:
+      assets_for_all: true
+      metadata_backup:
+        path: /config/backup/Monkey_Metadata_Backup.yml
+        add_blank_entries: true
+        sync_tags: true
+      mass_genre_update:
+        - tmdb
+        - tvdb
+        - imdb
+        - omdb
+        - lock
+      mass_studio_update:
+        - tmdb
+        - lock
+      mass_originally_available_update: 
+        - tmdb
+        - tvdb
+#        - mdb_digital
+        - lock
+settings:
+  cache: true
+  cache_expiration: 14
+  asset_directory:
+  - config/assets/SORT # Must be first for when new folders are created.
+  - config/assets/NEEDPOSTER # Films I haven't found a relevant poster for. Yet.
+  - config/assets/basic
+  - config/assets/collections
+  - config/assets/custom
+  - config/assets/directors
+  - config/assets/imdb
+  - config/assets/letterboxd
+  - config/assets/movies
+  - config/assets/studios
+  - config/assets/special
+  asset_folders: true
+  asset_depth: 2
+  create_asset_folders: true
+  prioritize_assets: true
+  dimensional_asset_rename: true
+  download_url_assets: false
+  show_missing_season_assets: false
+  show_missing_episode_assets: false
+  show_asset_not_needed: true
+  sync_mode: append
+  minimum_items: 2
+  default_collection_order: custom
+  delete_below_minimum: true
+  delete_not_scheduled: false
+  run_again_delay: 2
+  missing_only_released: true
+  only_filter_missing: false
+  show_unmanaged: true
+  show_unconfigured: true
+  show_filtered: false
+  show_options: true
+  show_missing: true
+  show_missing_assets: false
+  save_report: false
+  tvdb_language: eng
+  ignore_ids:
+  ignore_imdb_ids:
+  item_refresh_delay: 0
+  playlist_sync_to_user:
+  playlist_exclude_users:
+  playlist_report: false
+  verify_ssl: true
+  custom_repo:
+  check_nightly: false
+  run_order:
+  - operations
+  - metadata
+  - collections
+  - overlays
+  overlay_artwork_filetype: jpg
+  overlay_artwork_quality:
+webhooks:
+  error: notifiarr
+  version: notifiarr
+  run_start: notifiarr
+  run_end: notifiarr
+  changes: notifiarr
+  delete: notifiarr
+plex:
+  url: REDACTED
+  token: REDACTED
+  timeout: 60
+  clean_bundles: true
+  empty_trash: false
+  optimize: true
+  db_cache: 512
+  verify_ssl:
+tmdb:
+  apikey: REDACTED
+  language: en
+  cache_expiration: 60
+  region:
+github:
+  token: ################################
+omdb:
+  apikey: REDACTED
+  cache_expiration: 60
+mdblist:
+  apikey: REDACTED
+  cache_expiration: 60
+notifiarr:
+  apikey: REDACTED
+radarr:
+  url: REDACTED
+  token: REDACTED
+  add_missing: false
+  add_existing: false
+  root_folder_path: REDACTED
+  monitor: false
+  availability: released
+  quality_profile: HD-1080p
+  tag: kometa
+  search: false
+  radarr_path:
+  plex_path:
+  upgrade_existing: false
+  ignore_cache: false
+  monitor_existing: false
+radarr4k:
+  url: REDACTED
+  token: REDACTED
+  add_missing: false
+  add_existing: false
+  root_folder_path: REDACTED
+  monitor: false
+  availability: released
+  quality_profile: WEBDL|Remux|Bluray|2160p
+  tag: kometa
+  search: false
+  radarr_path:
+  plex_path:
+  upgrade_existing: false
+  ignore_cache: false
+sonarr:
+  url: REDACTED
+  token: REDACTED
+  add_missing: false
+  add_existing: false
+  root_folder_path: REDACTED
+  monitor: all
+  quality_profile: WEBDL-1080p
+  language_profile: English
+  series_type: standard
+  season_folder: true
+  tag: kometa
+  search: false
+  cutoff_search: false
+  sonarr_path:
+  plex_path:
+  upgrade_existing: false
+  ignore_cache: false
+  monitor_existing: false
+trakt:
+  client_id: REDACTED
+  client_secret: REDACTED
+  authorization:
+  access_token: REDACTED
+    token_type: Bearer
+    expires_in: 7889238
+    refresh_token: REDACTED
+    scope: public
+    created_at: 1727793950
+  pin:
+############################################
