@@ -1,0 +1,38 @@
+# ignore all logs
+*.log
+**/log
+
+#ignore specfic items 
+config.cache
+UUID
+config/logs/
+
+# Ignore sensitive config
+config/config.yml
+config.yml
+
+#ignore env
+.env
+
+# Python specific ignores
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+.Python
+
+# Virtual environment directories
+env/
+venv/
+.venv/
+
+# Common IDE/editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# Bytecode compiled files
+*.pyc
