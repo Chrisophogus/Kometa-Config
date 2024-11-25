@@ -1,10 +1,3 @@
-# Plex Meta Manager Config
+# Kometa Config
 
-This repository contains redacted configuration files for managing media metadata with Plex Meta Manager. Sensitive keys and paths are automatically redacted before being committed.
-
-## Workflow
-
-1. Edit `config/config.yml` locally.
-2. Run the redaction process before pushing changes:
-   ```bash
-   git push
+This repository contains the redacted configuration file(s) for my Kometa setup. Any sensitive keys and paths are redacted from my main private repository before being published.
